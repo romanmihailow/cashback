@@ -4,21 +4,26 @@ public class Main {
 
 
         int score = 100; // Баланс счета клиента
-        int upScore = 100; // сумма пополнения
-        int bonus = 1 ; // Бонус на каждые 100 рублей при пополнении баланса от 1000 руб.
+        int cash = 1100;  // Сумма пополнения
+        int bonus = 0 ;  // Бонусных рублей на счете
 
-        if (upScore >= 1000) score = score + upScore + ( upScore / 100 );
+        if (cash >= 1000) {
+            bonus = cash / 100;
+            score = score + cash + bonus;
 
-        else score = score + upScore;
+
+        } else {
+            score = score + cash;
+        }
 
         System.out.println("Баланс счета:" + score );
-        System.out.print("Бонусных рублей:" + (upScore / 100) );
+        System.out.print("Бонусных рублей на счете:" + bonus );
 
 
     }
 
 
-
+ 
 
 
 }
